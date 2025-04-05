@@ -40,6 +40,11 @@ func TestNormalizeURL(t *testing.T) {
 			inputURL: "https://blog.boot.dev:443/path",
 			expected: "blog.boot.dev/path",
 		},
+		{
+			name:     "strip www prefix",
+			inputURL: "https://www.blog.boot.dev/path",
+			expected: "blog.boot.dev/path",
+		},
 	}
 
 	for i, tc := range tests {
